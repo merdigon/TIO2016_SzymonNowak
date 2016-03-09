@@ -10,14 +10,5 @@ namespace Model_Struct.Space
         public string Name { get; set; }
         public Person Captain { get; set; }
         public List<Person> Crew { get; set; }
-        public void PresentCrew()
-        {
-            Console.WriteLine("Captain: " + Captain.Name);
-            Console.WriteLine("Crew:");
-            foreach (Person p in Crew)
-            {
-                Console.WriteLine(p.Name);
-            }
-        }
     }
 }

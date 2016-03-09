@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3e2315aa-8c68-4b41-85e0-0371781b83c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="489baf77-cbda-495d-800f-dcef587838f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -21,11 +22,11 @@
     <MetadataSource Address="http://localhost:9019/BlackHole" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BlackHole.xsd" MetadataType="Schema" ID="f7ba704f-bcfa-4eb8-9aa9-030d8dd58380" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?xsd=xsd0" />
-    <MetadataFile FileName="BlackHole1.xsd" MetadataType="Schema" ID="04098167-4b5e-4a0b-a792-a16400560254" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?xsd=xsd1" />
-    <MetadataFile FileName="BlackHole.wsdl" MetadataType="Wsdl" ID="ab393125-47a4-46e0-9646-59cec9a4aa48" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?wsdl" />
-    <MetadataFile FileName="BlackHole.disco" MetadataType="Disco" ID="6ae57334-9716-41e6-920c-74ef9a80dac8" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?disco" />
-    <MetadataFile FileName="BlackHole2.xsd" MetadataType="Schema" ID="fb727fbe-b835-40ce-9d9d-82f9b6096cb3" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?xsd=xsd2" />
+    <MetadataFile FileName="BlackHole.xsd" MetadataType="Schema" ID="a21230be-4b99-48e0-b8c5-9bf04b382916" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?xsd=xsd0" />
+    <MetadataFile FileName="BlackHole1.xsd" MetadataType="Schema" ID="6ce1cc6a-b978-4c76-936d-0ee63ed30c1f" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?xsd=xsd1" />
+    <MetadataFile FileName="BlackHole.wsdl" MetadataType="Wsdl" ID="aec7d8cb-09b2-4eb1-8c3e-a2aaab62c2b4" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?wsdl" />
+    <MetadataFile FileName="BlackHole.disco" MetadataType="Disco" ID="1d2c7f1e-16f6-4f86-8c64-d5e2375b5b01" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?disco" />
+    <MetadataFile FileName="BlackHole2.xsd" MetadataType="Schema" ID="33a02e45-8003-40ef-bea1-9f14e040410c" SourceId="1" SourceUrl="http://localhost:9019/BlackHole?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
