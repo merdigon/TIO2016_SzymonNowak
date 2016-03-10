@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -43,12 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model Struct\BlackHole.cs" />
-    <Compile Include="Model Struct\IBlackHole.cs" />
-    <Compile Include="Model Struct\Person.cs" />
+    <Compile Include="ServiceImplementations\BlackHole.cs" />
+    <Compile Include="ServiceContracts\IBlackHole.cs" />
+    <Compile Include="DataTransferObjects\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model Struct\Starship.cs" />
+    <Compile Include="DataTransferObjects\Starship.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
