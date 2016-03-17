@@ -11,12 +11,12 @@ namespace CosmicAdventureDTO.DataTransferObjects
     public class Person
     {
         [DataMember]
-        string Name { get; set; }
+        public string Name { get; set; }
 
         [DataMember]
-        string Nick { get; set; }
+        public string Nick { get; set; }
 
         [DataMember]
-        float Age { get; set; }
+        public float Age { get; set; }
     }
 }
