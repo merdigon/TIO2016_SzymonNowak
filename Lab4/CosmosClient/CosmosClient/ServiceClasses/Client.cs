@@ -1,41 +1,40 @@
 ﻿using CosmosClients.CosmosReference;
 using CosmosClients.FirstOrderReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.ServiceModel;
 using System.Text;
 
-namespace CosmosClients
+namespace CosmosClients.ServiceClasses
 {
     public class Client
     {
-        List<Starship> _starships = new List<Starship>();
-        bool _anySystem = true;
-        int _gold = 1000;
-        int _imperiumMoneyAskCount = 4;
-
-        public int Gold
-        {
-            get
-            {
-                return _gold;
-            }
-        }
-
         private CosmosClient cosmosCl;
         private FirstOrderClient fOrderCl;
+        private GameStats gameStats;
 
         public Client()
         {
-            cosmosCl = new CosmosClient();
-            fOrderCl = new FirstOrderClient();
-            cosmosCl.InitializeGame();
+            try
+            {
+                cosmosCl = new CosmosClient();
+                fOrderCl = new FirstOrderClient();
+                gameStats = new GameStats();
+                cosmosCl.InitializeGame();
+            }
+            catch (EntryPointNotFoundException eex)
+            {
+                throw new GalacticException("Brak dostępu do gwiezdnych wrót: " + eex.Message);
+            }
+            catch (ServerTooBusyException sex)
+            {
+                throw new GalacticException("Gwiezdne wrota są zajęte, podróżniku: " + sex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new GalacticException("Nieznany błąd podczas inicjalizacji gwiezdnych wrót: " + ex.Message);
+            }
         }
 
-        public string GetMenuStats()
-        {
-            return "Money: " + _gold + ", requests: " + _imperiumMoneyAskCount;
-        }
 
         public bool AskImperiumForGold()
         {
@@ -44,10 +43,10 @@ namespace CosmosClients
 
             try
             {
-                if (_imperiumMoneyAskCount > 0)
+                if (gameStats.ImperiumMoneyAskCount > 0)
                 {
-                    _gold += fOrderCl.GetMoneyFromImperium();
-                    _imperiumMoneyAskCount--;
+                    gameStats.Gold += fOrderCl.GetMoneyFromImperium();
+                    gameStats.ImperiumMoneyAskCount--;
                     return true;
                 }
                 return false;
@@ -65,13 +64,123 @@ namespace CosmosClients
 
             try
             {
-                if (money <= _gold)
+                if (money <= gameStats.Gold)
                 {
-                    _starships.Add(cosmosCl.GetStarship(money));
-                    _gold -= money;
+                    gameStats.Starships.Add(cosmosCl.GetStarship(money));
+                    gameStats.Gold -= money;
                     return true;
                 }
                 return false;
+            }
+            catch (Exception ex)
+            {
+                throw new GalacticException("Error!", ex);
+            }
+        }
+
+        public bool DidWeWin()
+        {
+            return !gameStats.AnySystem;
+        }
+
+        public void EndStarshipSending()
+        {
+            if (gameStats.Starships.Count == 0)
+                gameStats.AnySystem = false;
+        }
+
+        public string GetMenuStats()
+        {
+            return "Money: " + gameStats.Gold + ", requests: " + gameStats.ImperiumMoneyAskCount;
+        }
+
+        public int GetNumberOfGold()
+        {
+            return gameStats.Gold;
+        }
+        public int GetNumberOfStarships()
+        {
+            return gameStats.Starships.Count;
+        }
+
+        public string GetNumberOfStarshipsInformation()
+        {
+            if (gameStats.Starships.Count == 0)
+            {
+                EndStarshipSending();
+                Console.WriteLine("Hangar jest pusty!");
+                return null;
+            }
+            return "Statków gotowych do podróży: " + GetNumberOfStarships() + ".";
+        }
+
+        public string GetStarshipsInformation()
+        {
+            StringBuilder strBuild = new StringBuilder();
+            int i = 1;
+            foreach (Starship ship in gameStats.Starships)
+            {
+                strBuild.Append(i + ". ");
+                strBuild.Append(ship.ShipPower + ", ");
+                foreach (Person person in ship.Crew)
+                {
+                    strBuild.Append(person.Name + " ");
+                    strBuild.Append(person.Age + ", ");
+                }
+                strBuild.AppendLine();
+                i++;
+            }
+            return strBuild.ToString();
+        }
+
+        public string GetSystemInformation()
+        {
+            string result;
+            return GetSystemInformation(out result);
+        }
+
+        public string GetSystemInformation(out string systemName)
+        {
+            if (cosmosCl == null)
+                throw new GalacticException("Gate to cosmos was not initialized!");
+
+            try
+            {
+                StarSystem starSys;
+                systemName = null;
+                if ((starSys = cosmosCl.GetSystem()) == null)
+                {
+                    EndStarshipSending();
+                    Console.WriteLine("Brak systemu!");
+                    return null;
+                }
+                systemName = starSys.Name;
+                return "System " + starSys.Name + ", odleglość " + starSys.BaseDistance + ".";
+            }
+            catch (Exception ex)
+            {
+                throw new GalacticException("Error!", ex);
+            }
+        }
+
+        public void SendStarship(int index, string systemName)
+        {
+            if (cosmosCl == null)
+                throw new GalacticException("Gate to cosmos was not initialized!");
+
+            try
+            {
+                Starship returnedStarship = cosmosCl.SendStarship(gameStats.Starships[index-1], systemName);
+                gameStats.Starships.RemoveAt(index-1);
+
+                if (returnedStarship.Gold != 0)
+                {
+                    gameStats.Gold += returnedStarship.Gold;
+                    returnedStarship.Gold = 0;
+                }
+
+                if (returnedStarship.Crew.Length > 0)
+                    gameStats.Starships.Add(returnedStarship);
             }
             catch (Exception ex)
             {
