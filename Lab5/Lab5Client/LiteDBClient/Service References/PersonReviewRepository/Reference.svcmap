@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0b69c384-a273-49b0-a09e-e55186814843" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="daf1c4be-03e8-448a-81cc-bbb6deed5284" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="fc6b1cf3-1e09-48a9-b58e-4eae9c41cf6c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="fe1412dc-5530-4442-a592-3965a5094550" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" />
+    <MetadataFile FileName="ModelLibrary.xsd" MetadataType="Schema" ID="b0087525-2f1c-49d0-a9c5-473da0f74da4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" />
+    <MetadataFile FileName="LiteDBService.DBProvider.BaseObjects.xsd" MetadataType="Schema" ID="28a791d3-a3b6-4d64-9805-aa0d2f04a820" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="f7117d4a-ac8f-4085-8e7b-cb38237dc9af" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/PersonReviewRepositoryService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

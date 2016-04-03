@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="01af10ac-b44a-4c74-a4ab-eb2544aaa57c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="77117bc0-eefd-4f54-af8a-375c066145c3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e5b312e9-f506-4ea1-b4a0-ae62b684c3ff" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="cb08377c-b7ed-4d47-afaa-fcf0fdf50c18" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" />
+    <MetadataFile FileName="ModelLibrary.xsd" MetadataType="Schema" ID="23067062-001f-47db-8b0a-d08b42926413" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" />
+    <MetadataFile FileName="LiteDBService.DBProvider.BaseObjects.xsd" MetadataType="Schema" ID="08e98c2b-1d26-4237-8e39-c079be1add99" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="e2eb3235-c898-4810-8cdb-aeb09bc8cd5e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/api/MovieRepositoryService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

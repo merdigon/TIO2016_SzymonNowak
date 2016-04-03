@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLibrary", "ModelLibrary\ModelLibrary.csproj", "{95D2BCFA-DAE8-4909-BEEC-EF234D83C981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDBService.MovieRepository", "LiteDBService.MovieRepository\LiteDBService.MovieRepository.csproj", "{63527C4C-15FF-4D7F-A4AD-EA8939C3DD2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDBService.PersonReviewRepository", "LiteDBService.PersonReviewRepository\LiteDBService.PersonReviewRepository.csproj", "{7674C1E1-5050-4B99-A759-F7C28AD9E223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDBService.DBProvider", "LiteDBService.DBProvider\LiteDBService.DBProvider.csproj", "{DB4B27DE-4F2E-4786-B72D-80FF52CD362B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFPersonReviewRepositoryService", "WcfServiceLibrary1\WCFPersonReviewRepositoryService.csproj", "{8D2472C7-9942-42FD-950D-E48C91DE99FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFMovieRepositoryService", "WcfServiceLibrary2\WCFMovieRepositoryService.csproj", "{CE85E900-90CB-46C2-BC11-58D666ED6CE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95D2BCFA-DAE8-4909-BEEC-EF234D83C981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D2BCFA-DAE8-4909-BEEC-EF234D83C981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D2BCFA-DAE8-4909-BEEC-EF234D83C981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D2BCFA-DAE8-4909-BEEC-EF234D83C981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63527C4C-15FF-4D7F-A4AD-EA8939C3DD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63527C4C-15FF-4D7F-A4AD-EA8939C3DD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63527C4C-15FF-4D7F-A4AD-EA8939C3DD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63527C4C-15FF-4D7F-A4AD-EA8939C3DD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7674C1E1-5050-4B99-A759-F7C28AD9E223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7674C1E1-5050-4B99-A759-F7C28AD9E223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7674C1E1-5050-4B99-A759-F7C28AD9E223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7674C1E1-5050-4B99-A759-F7C28AD9E223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB4B27DE-4F2E-4786-B72D-80FF52CD362B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB4B27DE-4F2E-4786-B72D-80FF52CD362B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB4B27DE-4F2E-4786-B72D-80FF52CD362B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB4B27DE-4F2E-4786-B72D-80FF52CD362B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2472C7-9942-42FD-950D-E48C91DE99FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2472C7-9942-42FD-950D-E48C91DE99FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2472C7-9942-42FD-950D-E48C91DE99FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2472C7-9942-42FD-950D-E48C91DE99FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE85E900-90CB-46C2-BC11-58D666ED6CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE85E900-90CB-46C2-BC11-58D666ED6CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE85E900-90CB-46C2-BC11-58D666ED6CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE85E900-90CB-46C2-BC11-58D666ED6CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
