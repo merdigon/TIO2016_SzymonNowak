@@ -7,8 +7,8 @@
     <ProjectGuid>{8D0215D7-3920-4194-BDB0-E71665FE4EA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LiteDBService.MovieRepository</RootNamespace>
-    <AssemblyName>LiteDBService.MovieRepository</AssemblyName>
+    <RootNamespace>LiteDBService.BookRepository</RootNamespace>
+    <AssemblyName>LiteDBService.BookRepository</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

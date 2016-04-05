@@ -1,7 +1,7 @@
 ﻿using LiteDB;
 using LiteDBService.DBProvider;
 using LiteDBService.DBProvider.BaseObjects;
-using LiteDBService.MovieRepository.DTOModels;
+using LiteDBService.BookRepository.DTOModels;
 using ModelLib;
 using System;
 using System.Collections.Generic;
@@ -9,11 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteDBService.MovieRepository
+namespace LiteDBService.BookRepository
 {
-    public class MovieRepository : RepositoryBase<Book, BookDTO>
+    public class BookRepository : RepositoryBase<Book, BookDTO>
     {        
-        public MovieRepository()
+        public BookRepository()
             : base(@"C:\tmp\book", "books") { }
 
         public override Book Map(BookDTO model)

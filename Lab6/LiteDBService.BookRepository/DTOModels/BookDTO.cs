@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteDBService.MovieRepository.DTOModels
+namespace LiteDBService.BookRepository.DTOModels
 {
     public class BookDTO : BaseDTO
     {

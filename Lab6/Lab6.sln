@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLib", "ModelLib\ModelLib.csproj", "{006A4D95-D1F9-469D-958F-68EC446E0F0D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB4B27DE-4F2E-4786-B72D-80FF52CD362B} = {DB4B27DE-4F2E-4786-B72D-80FF52CD362B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDBService.AuthorRepository", "LiteDBService.AuthorRepository\LiteDBService.AuthorRepository.csproj", "{63527C4C-15FF-4D7F-A4AD-EA8939C3DD2D}"
 EndProject
