@@ -1,0 +1,1 @@
+2016-05-09 13:07:55,341 [6] INFO RestService.Loggers.Logger - GET for Paintings was called
