@@ -41,7 +41,7 @@ namespace DBProvidersLibrary.PGProvider
 
         public bool Delete()
         {
-            dbContext.Paintings.RemoveRange(dbContext.Paintings);
+            dbContext.Artists.RemoveRange(dbContext.Artists);
             dbContext.SaveChanges();
             return true;
         }
