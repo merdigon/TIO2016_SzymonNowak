@@ -10,7 +10,8 @@ namespace DBProvidersLibrary.PGProvider
 {
     public class MuseumContext : DbContext
     {
-        public MuseumContext() : base("MuseumContext") { }
+        public MuseumContext()
+            : base("MuseumContext")        {        }
 
         public DbSet<Painting> Paintings { get; set; }
         public DbSet<Artist> Artists { get; set; }
