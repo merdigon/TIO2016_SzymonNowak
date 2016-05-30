@@ -13,12 +13,12 @@ namespace CommonData.DataBaseProvider
 
         IQueryable<T> Read(int id);
 
-        T Create(T objectToSave);
+        Task<int> Create(T objectToSave);
 
-        T Update(T objectToUpdate);
+        Task<int> Update(T objectToUpdate);
 
-        bool Delete();
+        Task<bool> Delete();
 
-        bool Delete(int id);
+        Task<bool> Delete(int id);
     }
 }

@@ -31,28 +31,26 @@ namespace CommonData.DataBaseProvider
             return dbContext.Games.Where(p => p.Id == id);            
         }
 
-        public Game Create(Game GameToSave)
+        public Task<int> Create(Game GameToSave)
         {
             dbContext.Games.Add(GameToSave);
-            dbContext.SaveChanges();
-            return GameToSave;
+            return dbContext.SaveChangesAsync();
         }
 
-        public Game Update(Game GameToUpdate)
+        public Task<int> Update(Game GameToUpdate)
         {
             dbContext.Entry(GameToUpdate).State = EntityState.Modified;
-            dbContext.SaveChanges();
-            return GameToUpdate;
+            return dbContext.SaveChangesAsync();
         }
 
-        public bool Delete()
+        public async Task<bool> Delete()
         {
             dbContext.Games.RemoveRange(dbContext.Games);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return true;
         }
 
-        public bool Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             Game game = dbContext.Games.Find(id);
             if (game == null)
@@ -61,7 +59,7 @@ namespace CommonData.DataBaseProvider
             }
 
             dbContext.Games.Remove(game);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return true;
         }
     }

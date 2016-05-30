@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.OData;
@@ -32,7 +33,7 @@ namespace RestService.Controllers
         }
 
         // PUT api/Stores/5
-        public IHttpActionResult PutStores([FromODataUri] int id, Store Store)
+        public async Task<IHttpActionResult> Put([FromODataUri] int id, Store Store)
         {
             if (id != Store.Id)
             {
@@ -41,7 +42,7 @@ namespace RestService.Controllers
             
             try
             {
-                _repo.Update(Store);
+                await _repo.Update(Store);
             }
             catch (Exception)
             {
@@ -60,21 +61,21 @@ namespace RestService.Controllers
 
         // POST api/Stores
         [ResponseType(typeof(Store))]
-        public IHttpActionResult PostStores(Store Store)
+        public async Task<IHttpActionResult> Post(Store store)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _repo.Create(Store);
+            await _repo.Create(store);
 
-            return CreatedAtRoute("DefaultApi", new { id = Store.Id }, Store);
+            return Created(store);
         }
 
         // DELETE api/Stores/5
         [ResponseType(typeof(Store))]
-        public IHttpActionResult DeleteStores(int id)
+        public async Task<IHttpActionResult> DeleteStores(int id)
         {
             Store Store = _repo.Read(id).FirstOrDefault();
             if (Store == null)
@@ -82,7 +83,7 @@ namespace RestService.Controllers
                 return NotFound();
             }
 
-            _repo.Delete(id);
+            await _repo.Delete(id);
 
             return Ok(Store);
         }

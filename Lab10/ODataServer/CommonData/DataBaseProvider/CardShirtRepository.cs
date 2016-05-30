@@ -31,28 +31,26 @@ namespace CommonData.DataBaseProvider
             return dbContext.CardShirts.Where(p => p.Id == id);
         }
 
-        public CardShirt Create(CardShirt CardShirtToSave)
+        public Task<int> Create(CardShirt CardShirtToSave)
         {
             dbContext.CardShirts.Add(CardShirtToSave);
-            dbContext.SaveChanges();
-            return CardShirtToSave;
+            return dbContext.SaveChangesAsync();
         }
 
-        public CardShirt Update(CardShirt CardShirtToUpdate)
+        public Task<int> Update(CardShirt CardShirtToUpdate)
         {
             dbContext.Entry(CardShirtToUpdate).State = EntityState.Modified;
-            dbContext.SaveChanges();
-            return CardShirtToUpdate;
+            return dbContext.SaveChangesAsync();
         }
 
-        public bool Delete()
+        public async Task<bool> Delete()
         {
             dbContext.CardShirts.RemoveRange(dbContext.CardShirts);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return true;
         }
 
-        public bool Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             CardShirt cardShirt = dbContext.CardShirts.Find(id);
             if (cardShirt == null)
@@ -61,7 +59,7 @@ namespace CommonData.DataBaseProvider
             }
 
             dbContext.CardShirts.Remove(cardShirt);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return true;
         }
 

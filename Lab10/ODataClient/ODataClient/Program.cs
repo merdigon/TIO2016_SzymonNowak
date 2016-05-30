@@ -28,6 +28,7 @@ namespace ODataClient
                 AgeRate = 18,
                 Id = 3
             });
+            container.SaveChanges();
 
             //wyświetlenie gier
             games = container.Games;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.OData;
@@ -42,7 +43,7 @@ namespace RestService.Controllers
         }
 
         // PUT api/Games/5
-        public IHttpActionResult Put([FromODataUri] int id, Game Game)
+        public async Task<IHttpActionResult> Put([FromODataUri] int id, Game Game)
         {
             if (id != Game.Id)
             {
@@ -51,7 +52,7 @@ namespace RestService.Controllers
             
             try
             {
-                _gameRepo.Update(Game);
+                await _gameRepo.Update(Game);
             }
             catch (Exception)
             {
@@ -70,21 +71,21 @@ namespace RestService.Controllers
 
         // POST api/Games
         [ResponseType(typeof(Game))]
-        public IHttpActionResult Post(Game Game)
+        public async Task<IHttpActionResult> Post(Game game)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _gameRepo.Create(Game);
+            await _gameRepo.Create(game);
 
-            return CreatedAtRoute("DefaultApi", new { id = Game.Id }, Game);
+            return Created(game);
         }
 
         // DELETE api/Games/5
         [ResponseType(typeof(Game))]
-        public IHttpActionResult Delete([FromODataUri] int id)
+        public async Task<IHttpActionResult> Delete([FromODataUri] int id)
         {
             Game game = _gameRepo.Read(id).FirstOrDefault();
             if (game == null)
@@ -92,7 +93,7 @@ namespace RestService.Controllers
                 return NotFound();
             }
 
-            _gameRepo.Delete(id);
+            await _gameRepo.Delete(id);
 
             return Ok(game);
         }

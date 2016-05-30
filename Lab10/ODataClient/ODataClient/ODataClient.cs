@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2016-05-19 12:05:01
+// Generation date: 2016-05-30 16:23:15
 namespace ODataClient.CommonData.DTO
 {
     /// <summary>

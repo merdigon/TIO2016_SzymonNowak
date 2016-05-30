@@ -24,28 +24,26 @@ namespace CommonData.DataBaseProvider
             return dbContext.Stores.Where(p => p.Id == id);            
         }
 
-        public Store Create(Store StoreToSave)
+        public Task<int> Create(Store StoreToSave)
         {
             dbContext.Stores.Add(StoreToSave);
-            dbContext.SaveChanges();
-            return StoreToSave;
+            return dbContext.SaveChangesAsync();
         }
 
-        public Store Update(Store StoreToUpdate)
+        public Task<int> Update(Store StoreToUpdate)
         {
             dbContext.Entry(StoreToUpdate).State = EntityState.Modified;
-            dbContext.SaveChanges();
-            return StoreToUpdate;
+            return dbContext.SaveChangesAsync();
         }
 
-        public bool Delete()
+        public async Task<bool> Delete()
         {
             dbContext.Stores.RemoveRange(dbContext.Stores);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return true;
         }
 
-        public bool Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             Store store = dbContext.Stores.Find(id);
             if (store == null)
@@ -54,7 +52,7 @@ namespace CommonData.DataBaseProvider
             }
 
             dbContext.Stores.Remove(store);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return true;
         }
     }
